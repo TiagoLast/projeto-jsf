@@ -1,0 +1,203 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/templates/Layout.xhtml">
+    <ui:define name="content">
+        <style type="text/css">
+ 		.ui-panel {
+ 		margin-top:70px
+ 		}
+ 		.inlineCalendarDemo > .hasDatepicker {
+ 		padding-left: 50px;
+ 		}
+ 
+        </style>
+        <h:form id="frmproduto">
+            <div class="ContainerIndent ui-fluid">
+                <p:panel>
+                    <div class="ContainerIndent">
+                        <span class="FontBold Fs18 hardblue">Cadastro de clientes
+                        </span>
+                    </div>
+                    <div class="Container">
+                        <div class="Container60 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="nome" value="Nome"/>
+                                    <p:inputText value="#{clienteMB.cliente.nome}" styleClass="FontBold Fs18 hardblue" id="nome" required="true" requiredMessage="Nome obrigatorio"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Container20 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="cpf" value="Cpf"/>
+                                    <p:inputText value="#{clienteMB.cliente.cpf}" styleClass="FontBold Fs18 hardblue" id="cpf" required="true" requiredMessage="Cpf obrigatorio"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Container20 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="rg" value="Rg"/>
+                                    <p:inputText value="#{clienteMB.cliente.telefone}" styleClass="FontBold Fs18 hardblue" id="rg"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container">
+                        <div class="Container100 Responsive50">
+                            <div class="ContainerIndent">
+                                <p:separator/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container">
+                        <div class="Container20 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="cep" value="Cep"/>
+                                    <p:inputText value="#{clienteMB.cliente.celular}" styleClass="FontBold Fs18 hardblue" id="cep"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Container40 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="endereco" value="Endereço"/>
+                                    <p:inputText value="#{clienteMB.cliente.email}" styleClass="FontBold Fs18 hardblue" id="endereco"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="Container40 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="endereco" value="Endereço"/>
+                                    <p:inputText value="#{clienteMB.cliente.cep}" styleClass="FontBold Fs18 hardblue" id="endereco"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="Container40 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="endereco" value="Endereço"/>
+                                    <p:inputText value="#{clienteMB.cliente.endereco}" styleClass="FontBold Fs18 hardblue" id="endereco"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="Container40 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="endereco" value="Endereço"/>
+                                    <p:inputText value="#{clienteMB.cliente.cidade}" styleClass="FontBold Fs18 hardblue" id="endereco"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="Container40 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="endereco" value="Endereço"/>
+                                    <p:inputText value="#{clienteMB.cliente.estado}" styleClass="FontBold Fs18 hardblue" id="endereco"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="Container40 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="bairro" value="Bairro"/>
+                                    <p:inputText styleClass="FontBold Fs18 hardblue" id="bairro"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container">
+                        <div class="Container30 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="cidade" value="Cidade"/>
+                                    <p:inputText styleClass="FontBold Fs18 hardblue" id="cidade"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Container30 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="city" value="Editable: " />
+                                    <p:selectOneMenu class="ui-selectonemenu-trigger ui-state-default ui-corner-right" 
+ id="city" value="#{selectOneMenuView.city}" effect="fold" editable="false"
+ style="min-width: 120px;">
+                                        <f:selectItem itemLabel="Select One" itemValue="" />
+                                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Container20 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="inline" value="Data"/>
+                                    <p:calendar id="inline"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Container10 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="switch" value="Switch"/>
+                                    <p:inputSwitch id="switch"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container">
+                        <div class="Container30 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:panelGrid columns="1" style="margin-bottom: 10px" layout="grid" styleClass="ui-panelgrid-blank">
+                                        <h:outputText id="displayRange" value="Values" />
+                                        <p:slider for="txt6,txt7" display="displayRange" range="true" displayTemplate="Between {min} and {max}" minValue="0" maxValue="100"/>
+                                    </p:panelGrid>
+                                    <h:inputHidden id="txt6" value="20"/>
+                                    <h:inputHidden id="txt7" value="80"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Container20 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="datetime" value="Datetime:" />
+                                    <p:calendar id="datetime" pattern="dd/MM/yyyy HH:mm:ss" locale="pt_BR" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Container20 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100">
+                                    <p:outputLabel for="selectBooleanButton" value="selectBooleanButton" />
+                                    <p:selectBooleanButton id="selectBooleanButton" onLabel="Yes" offLabel="No"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Container20 Responsive50">
+                            <div class="ContainerIndent">
+                                <div class="Container100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </p:panel>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

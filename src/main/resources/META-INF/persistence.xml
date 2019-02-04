@@ -1,0 +1,48 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+		http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<!-- unidade de persistencia com o nome financas -->
+	<persistence-unit name="projeto-jsf" transaction-type="RESOURCE_LOCAL">
+
+		<!-- Implementação do JPA, no nosso caso Hibernate -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- Aqui são listadas todas as entidades -->
+		<class>br.com.projeto.comum.AppBaseEntity</class>
+		<class>br.com.projeto.entity.AgendaContadoEntity</class>
+		<class>br.com.projeto.entity.LancamentoEntity</class>
+		<class>br.com.projeto.entity.ProdutoEntity</class>
+		<class>br.com.projeto.entity.CategoriaEntity</class>
+		<class>br.com.projeto.entity.EstoqueEntity</class>
+		<class>br.com.projeto.entity.AgendaxpEntity</class>
+		<class>br.com.projeto.entity.FiadoEntity</class>
+		<class>br.com.projeto.entity.ClienteEntity</class>
+		<class>br.com.projeto.entity.DespesaEntity</class>
+		<class>br.com.projeto.entity.ConsultaEntity</class>
+		<class>br.com.projeto.entity.ProcedimentoEntity</class>
+		<class>br.com.projeto.entity.PacienteEntity</class>
+		<class>br.com.projeto.entity.ConvenioEntity</class>
+		<class>br.com.projeto.entity.ProntuarioEntity</class>
+		
+		
+		<properties>
+
+			<!-- Propriedades JDBC -->
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/jsf" />
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="12345678" />
+
+			<!-- Configurações específicas do Hibernate -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.hbm2ddl.auto" value=""/>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+
+</persistence>
+	
