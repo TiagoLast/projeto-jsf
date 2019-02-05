@@ -6,7 +6,8 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.com.projeto.dao.PacienteDAO;
+import br.com.projeto.dao.PersistenceUtils;
+import br.com.projeto.dao.QueryUtils;
 import br.com.projeto.entity.PacienteEntity;
 import br.com.projeto.interfaces.AppBO;
 
@@ -16,31 +17,34 @@ public class PacienteBO implements Serializable, AppBO<PacienteEntity> {
 	private static final long serialVersionUID = 3609128568971127754L;
 
 	@Inject
-	private PacienteDAO pacienteDAO;
+	private QueryUtils<PacienteEntity> query;
+		
+	@Inject
+	private PersistenceUtils<PacienteEntity> dao;
 
 	@Override
 	public void save(PacienteEntity agenda) {
-		pacienteDAO.save(agenda);
+		dao.save(agenda);
 	}
 
 	@Override
 	public void remove(PacienteEntity agenda) {
-		pacienteDAO.remove(agenda);
+		dao.remove(agenda);
 	}
 
 	@Override
 	public List<PacienteEntity> all() {
-		return pacienteDAO.all(PacienteEntity.class);
+		return query.all(PacienteEntity.class);
 	}
 
 	@Override
 	public List<PacienteEntity> selected(String value) {
-		return pacienteDAO.recuperaItem(PacienteEntity.class, value, "nome");
+		return query.recuperaItem(PacienteEntity.class, value, "nome");
 	}
 
 	@Override
 	public PacienteEntity get(Long id) {
-		return pacienteDAO.get(PacienteEntity.class, id);
+		return query.get(PacienteEntity.class, id);
 	}
 
 }

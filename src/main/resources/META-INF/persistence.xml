@@ -13,14 +13,7 @@
 		<!-- Aqui são listadas todas as entidades -->
 		<class>br.com.projeto.comum.AppBaseEntity</class>
 		<class>br.com.projeto.entity.AgendaContadoEntity</class>
-		<class>br.com.projeto.entity.LancamentoEntity</class>
-		<class>br.com.projeto.entity.ProdutoEntity</class>
-		<class>br.com.projeto.entity.CategoriaEntity</class>
-		<class>br.com.projeto.entity.EstoqueEntity</class>
 		<class>br.com.projeto.entity.AgendaxpEntity</class>
-		<class>br.com.projeto.entity.FiadoEntity</class>
-		<class>br.com.projeto.entity.ClienteEntity</class>
-		<class>br.com.projeto.entity.DespesaEntity</class>
 		<class>br.com.projeto.entity.ConsultaEntity</class>
 		<class>br.com.projeto.entity.ProcedimentoEntity</class>
 		<class>br.com.projeto.entity.PacienteEntity</class>

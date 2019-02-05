@@ -48,9 +48,7 @@ public class ProntuarioImpl implements Serializable, ProntuarioFacade {
 
 	@Override
 	public List<ProntuarioEntity> recuperaPronturios(Long id) {
-		return prontuarioBO.recuperaPronturios(id);
+		return null;
 	}
-	
-	
 
 }

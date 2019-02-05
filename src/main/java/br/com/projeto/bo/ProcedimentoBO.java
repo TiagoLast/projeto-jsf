@@ -6,7 +6,8 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.com.projeto.dao.ProcedimentoDAO;
+import br.com.projeto.dao.PersistenceUtils;
+import br.com.projeto.dao.QueryUtils;
 import br.com.projeto.entity.ProcedimentoEntity;
 import br.com.projeto.interfaces.AppBO;
 
@@ -16,31 +17,35 @@ public class ProcedimentoBO implements Serializable, AppBO<ProcedimentoEntity> {
 	private static final long serialVersionUID = 3609128568971127754L;
 
 	@Inject
-	private ProcedimentoDAO procedimentoDAO;
+	private PersistenceUtils<ProcedimentoEntity> dao;
+	
+	@Inject
+	private QueryUtils<ProcedimentoEntity> query;
+	
 
 	@Override
 	public void save(ProcedimentoEntity procedimento) {
-		procedimentoDAO.save(procedimento);
+		dao.save(procedimento);
 	}
 
 	@Override
 	public void remove(ProcedimentoEntity procedimento) {
-		procedimentoDAO.remove(procedimento);
+		dao.remove(procedimento);
 	}
 
 	@Override
 	public List<ProcedimentoEntity> all() {
-		return procedimentoDAO.all(ProcedimentoEntity.class);
+		return query.all(ProcedimentoEntity.class);
 	}
 
 	@Override
 	public List<ProcedimentoEntity> selected(String value) {
-		return procedimentoDAO.recuperaItem(ProcedimentoEntity.class, value, "tipoProcedimento");
+		return query.recuperaItem(ProcedimentoEntity.class, value, "tipoProcedimento");
 	}
 
 	@Override
 	public ProcedimentoEntity get(Long id) {
-		return procedimentoDAO.get(ProcedimentoEntity.class, id);
+		return query.get(ProcedimentoEntity.class, id);
 	}
 
 }

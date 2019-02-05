@@ -6,7 +6,8 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.com.projeto.dao.ConvenioDAO;
+import br.com.projeto.dao.PersistenceUtils;
+import br.com.projeto.dao.QueryUtils;
 import br.com.projeto.entity.ConvenioEntity;
 import br.com.projeto.interfaces.AppBO;
 
@@ -16,31 +17,35 @@ public class ConvenioBO implements Serializable, AppBO<ConvenioEntity> {
 	private static final long serialVersionUID = 3609128568971127754L;
 
 	@Inject
-	private ConvenioDAO convenioDAO;
-
+	private QueryUtils<ConvenioEntity> query;
+		
+	@Inject
+	private PersistenceUtils<ConvenioEntity> dao;
+	
+	
 	@Override
 	public void save(ConvenioEntity agenda) {
-		convenioDAO.save(agenda);
+		dao.save(agenda);
 	}
 
 	@Override
 	public void remove(ConvenioEntity agenda) {
-		convenioDAO.remove(agenda);
+		dao.remove(agenda);
 	}
 
 	@Override
 	public List<ConvenioEntity> all() {
-		return convenioDAO.all(ConvenioEntity.class);
+		return query.all(ConvenioEntity.class);
 	}
 
 	@Override
 	public List<ConvenioEntity> selected(String value) {
-		return convenioDAO.recuperaItem(ConvenioEntity.class, value, "nomeConvenio");
+		return query.recuperaItem(ConvenioEntity.class, value, "nomeConvenio");
 	}
 
 	@Override
 	public ConvenioEntity get(Long id) {
-		return convenioDAO.get(ConvenioEntity.class, id);
+		return query.get(ConvenioEntity.class, id);
 	}
 
 }
