@@ -1,4 +1,4 @@
-package br.com.projeto.managebean;
+package br.com.projeto.mb;
 
 import java.io.Serializable;
 
